@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-
+# script that prints the current of the working directory
+# including only the part of the name after the first -
 for file in *
 do
     echo "$file" | cut -d'-' -f2
