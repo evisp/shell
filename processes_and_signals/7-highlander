@@ -3,8 +3,7 @@
 
 while true
 do
-  echo "To infinity and beyond"
-  sleep 2
-  trap 'echo "I am invincible"' SIGTERM 
+	printf "To infinity and beyond\n"
+	sleep 2
+	printf "I am invincible!!!\n" 14
 done
-
