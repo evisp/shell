@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # bash script that stops 4-to_infinity_and_beyond process.
 
+
+echo "$BASHPID" > /var/run/myscript.pid
+
 killthem() {
-  rm /var/run/holbertonscript.pid
+  rm /var/run/myscript.pid
   exit
 }
-
-echo "$BASHPID" > /var/run/holbertonscript.pid
 
 while true
 do
