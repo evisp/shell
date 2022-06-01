@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# this is a copmment that aims to describe
+# something important
+
 if [ "$1" == "start" ]
 then
   ./manage_my_process &
