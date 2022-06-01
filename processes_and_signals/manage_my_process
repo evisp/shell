@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# bash script that stops 4-to_infinity_and_beyond process.
+
+while true
+do
+  echo "I am alive!" > /tmp/my_process
+  sleep 2
+done
