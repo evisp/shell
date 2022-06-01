@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
-#Bash script that displays messages when read some signals
-echo $$ > /var/run/myscript.pid
-trap 'echo "I hate the kill command"; rm -rf /var/run/myscript.pid; exit' SIGTERM
-trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm -rf /var/run/myscript.pid; exit' SIGQUIT
-while :
+# bash script that stops 4-to_infinity_and_beyond process.
+
+
+echo "$BASHPID" > /var/run/myscript.pid
+
+killthem() {
+  rm /var/run/myscript.pid
+  exit
+}
+
+while true
 do
-    echo "To infinity and beyond"
-    sleep 2
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "Y U no love me?!"' SIGINT
+  trap 'echo "I hate the kill command" && killthem' SIGTERM
+  trap 'killthem' SIGQUIT
 done
